@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__."/../def.php";
+require_once __DIR__ . "/def.php";
 //check data
 $employee = [];
 $employee["id"] = filter_input(INPUT_POST,"id");

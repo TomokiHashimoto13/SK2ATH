@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__."/../def.php";
+require_once __DIR__ . "/def.php";
 $result = [];
 try{
   $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
