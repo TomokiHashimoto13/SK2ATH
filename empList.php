@@ -74,7 +74,7 @@ try{
           <td><?=$views["updated_at"]?></td>
           <td class="action-cell">
             <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
-            <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$viewData["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
+            <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
           </td>
         </tr>
         <?php endforeach ?>
