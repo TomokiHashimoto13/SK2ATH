@@ -1,0 +1,12 @@
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Undefined variable $viewData in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Trying to access array offset on value of type null in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Undefined variable $viewData in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Trying to access array offset on value of type null in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Undefined variable $viewData in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Trying to access array offset on value of type null in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Undefined variable $viewData in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Trying to access array offset on value of type null in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Undefined variable $viewData in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:21:56 Asia/Tokyo] PHP Warning:  Trying to access array offset on value of type null in C:\Sites\teamsakusei\SK2ATH\empList.php on line 77
+[25-Apr-2025 13:22:50 Asia/Tokyo] PHP Warning:  Undefined array key "userName" in C:\Sites\teamsakusei\SK2ATH\editEmp.php on line 62
+[25-Apr-2025 13:25:07 Asia/Tokyo] PHP Warning:  Undefined array key "userName" in C:\Sites\teamsakusei\SK2ATH\newEmp.php on line 62

@@ -1,33 +1,38 @@
 <?php
 session_start();
 require_once __DIR__ . "/../def.php";
-$error = "";
-
+$message = "";
+$result = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userID = trim($_POST['userID']);
+    // echo "id:$userID<br>";//debug
     $password = trim($_POST['password']);
+    echo "pass:$password<br>";//debug
   try {
     $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
 
     $db = new PDO($dsn, DB_USER, DB_PASS);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt = $db->prepare("SELECT passwords FROM EMPLOYEE WHERE emp_no = :userID");
+    $sql = "SELECT emp_name,passwords FROM employee WHERE emp_no = :userID";
+    $stmt = $db->prepare($sql);
 
     $stmt->bindParam(":userID", $userID, PDO::PARAM_STR);
-    
-    $stmt->execute();
 
+    $stmt->execute();
+    
     $user = $stmt->fetch(PDO::FETCH_ASSOC); //database
-    if ($user && password_verify($password, $user["passwords"])) {
+    // echo "{$user["emp_name"]}";//debug
+    if($password = $user["passwords"]){
       $_SESSION["userID"] = $userID; //session 
+      $_SESSION["userName"] = $user["emp_name"];
+      $message= "Welcom!";
       // header("Location: "); 
       // exit;
     } else {
-      $error = "Invalid username or password!";
+      $message = "Invalid username or password!";
     }
   } catch (PDOException $e) {
-    exit("Database error: " . $e->getMessage());
+    exit("Database errormessage: " . $e->getMessage());
   }finally{
     $stmt = null;
     $db = null;
@@ -45,9 +50,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header>
         <ul id="T">
-        <Img  id="danger" src="images/1495749066Danger-Warning-Sign-PNG-Clipart.png"> 
+        <img  id="danger" src="images/1495749066Danger-Warning-Sign-PNG-Clipart.png"> 
             <h1 id="title">安否情報確認</h1>
         </ul>
+        <?php if (!empty($message)) : ?>
+                <div class="message"><?= htmlspecialchars($message) ?></div>
+        <?php endif; ?>
     </header>
     <main>
         <form action="./login.php" method="POST">

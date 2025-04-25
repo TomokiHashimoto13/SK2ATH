@@ -30,15 +30,11 @@ try{
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>EMPLOYEE for ADMIN</title>
+  <title>EMPLOYEE</title>
 </head>
 <body>
   <header>
-    <h3>EMPLOYEE LIST FOR ADMIN</h3>
-    <div>
-      <button type="button"><a href="./newEmp.php">新規</a></button>
-    </div>
+    <h3>EMPLOYEE LIST</h3>
   </header>
   <main>
     <table>
@@ -55,7 +51,6 @@ try{
           <th>削除フラグ</th>
           <th>更新者</th>
           <th>更新日時</th>
-          <th colspan="2"></th>
         </tr>
       </thead>
       <tbody>
@@ -72,10 +67,6 @@ try{
           <td><?=$views["del_flag"]?></td>
           <td><?=$views["updated_by"]?></td>
           <td><?=$views["updated_at"]?></td>
-          <td class="action-cell">
-            <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
-            <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$viewData["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
-          </td>
         </tr>
         <?php endforeach ?>
       </tbody>
