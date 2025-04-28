@@ -68,7 +68,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <title>Document</title>
 </head>
 <body>
+<ul>
+        <li><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER">kokoko</p>  </li>
+
+        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+        <li><a href="">Setting</a></li>
+        <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+        <li><a href="./newEmp.php"><img src="./images/back.jpg" width="50" alt=""></a></li>
+      </ul>
+     
 <main>
+
+
         <div class="NE">
         <h1 id="Titel">New Employee</h1>
         <div class="messagebox">

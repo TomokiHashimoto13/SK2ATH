@@ -12,7 +12,7 @@ body {
   }
 
   #USER {
-    text-decoration: none; 
+     text-decoration: none; 
     margin: 0;
     padding: 0;
   }
@@ -110,33 +110,33 @@ li img {
     font-size: 24px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    body {
-        margin: 20px;
-    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        body {
+            margin: 20px;
+        }
 
-    ul {
-        position: static;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
+        ul {
+            position: static;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
 
-    .table-responsive {
-        margin-left: 0;
-        margin-top: 20px;
-        width: 100%;
-        padding: 10px;
-    }
+        .table-responsive {
+            margin-left: 0;
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+        }
 
-    li {
-        font-size: 20px;
-    }
+        li {
+            font-size: 20px;
+        }
 
-    .table {
-        font-size: 12px;
+        .table {
+            font-size: 12px;
+        }
     }
-}

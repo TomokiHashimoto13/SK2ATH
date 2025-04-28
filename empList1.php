@@ -69,20 +69,19 @@ try{
   <tbody>
     <?php foreach($result as $views): ?>
       <tr class="employee-row">
-        <td class="emp_no"><?=$views["emp_no"]?></td>
-        <td class="emp_name">
-          <a href="javascript:void(0);" class="toggle-details" data-emp-id="<?=$views["emp_no"]?>"><?=$views["emp_name"]?></a>
+        <td><?=$views["emp_no"]?></td>
+        <td><?=$views["emp_name"]?></a>
         </td>
         <!-- Hidden details columns -->
-        <td class="hide-on-mobile details"><?=$views["is_admin"]?></td>
-        <td class="hide-on-mobile details"><?=$views["status"]?></td>
-        <td class="hide-on-mobile details"><?=$views["department"]?></td>
-        <td class="hide-on-mobile details"><?=$views["phone_no"]?></td>
-        <td class="hide-on-mobile details"><?=$views["address"]?></td>
-        <td class="hide-on-mobile details"><?=$views["passwords"]?></td>
-        <td class="hide-on-mobile details"><?=$views["del_flag"]?></td>
-        <td class="hide-on-mobile details"><?=$views["updated_by"]?></td>
-        <td class="hide-on-mobile details"><?=$views["updated_at"]?></td>
+        <td><?=$views["is_admin"]?></td>
+        <td><?=$views["status"]?></td>
+        <td><?=$views["department"]?></td>
+        <td><?=$views["phone_no"]?></td>
+        <td><?=$views["address"]?></td>
+        <td><?=$views["passwords"]?></td>
+        <td><?=$views["del_flag"]?></td>
+        <td><?=$views["updated_by"]?></td>
+        <td><?=$views["updated_at"]?></td>
         <td class="action-cell">
           <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
           <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>

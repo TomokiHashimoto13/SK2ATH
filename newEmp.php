@@ -17,6 +17,7 @@ session_start();
         <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
         <li><a href="">Setting</a></li>
         <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+        <li><a href="./empList.php"><img src="./images/back.jpg" width="50" alt=""></a></li>
       </ul>
       <div>
         <div class="title">
