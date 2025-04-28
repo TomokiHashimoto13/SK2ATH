@@ -31,35 +31,43 @@ try{
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./CSS/employee1.css">
   <title>EMPLOYEE for ADMIN</title>
 </head>
 <body>
-  <header>
-    <h3>EMPLOYEE LIST FOR ADMIN</h3>
+<main>
+    <div id="DP">
+      <ul>
+        <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER">kokoko</p></li>
+        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+        <li><a href="">Setting</a></li>
+        <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+      </ul>
+
+      <div class="table-responsive">
+      <h3 id="T" >EMPLOYEE LIST FOR ADMIN</h3>
     <div>
-      <button type="button"><a href="./newEmp.php">新規</a></button>
+      <button id="B" type="button"><a href="./newEmp.php">新規</a></button>
     </div>
-  </header>
-  <main>
-    <table>
-      <thead>
-        <tr>
-          <th>社員番号</th>
-          <th>氏名</th>
-          <th>管理者</th>
-          <th>役職</th>
-          <th>部署</th>
-          <th>電話番号</th>
-          <th>住所</th>
-          <th>パスワード</th>
-          <th>削除フラグ</th>
-          <th>更新者</th>
-          <th>更新日時</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach($result as $views):?>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>社員番号</th>
+              <th>氏名</th>
+              <th>管理者</th>
+              <th>役職</th>
+              <th>部署</th>
+              <th>電話番号</th>
+              <th>住所</th>
+              <th>パスワード</th>
+              <th>削除フラグ</th>
+              <th>更新者</th>
+              <th>更新日時</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach($result as $views):?>
         <tr>
           <td><?=$views["emp_no"]?></td>
           <td><?=$views["emp_name"]?></td>
@@ -78,9 +86,12 @@ try{
           </td>
         </tr>
         <?php endforeach ?>
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </main>
+
   <footer>
 
   </footer>

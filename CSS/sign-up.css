@@ -1,0 +1,315 @@
+
+/* General Title Styles */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 50vh;
+}
+
+.title h1 {
+  border: 1px solid black;
+  border-radius: 100px;
+  background-color: blue;
+  color: white;
+  width: 25%;
+  font-size: 500%;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Image Styles */
+#L img {
+  margin: 0;
+  padding: 0;
+}
+
+#USER {
+  text-decoration: none; 
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Sidebar Styles */
+ul {
+  border: 1px solid black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: rgb(217, 214, 214);
+  height: 100vh;
+  position: fixed;
+  overflow: auto;
+}
+
+li {
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  text-align: left;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover {
+  background-color: azure;
+  color: brown;
+}
+
+li img {
+  margin-right: 10px;
+}
+
+/* Content Area (beside sidebar) */
+.table-responsive {
+  margin-left: 220px; /* space for sidebar */
+  max-width: 100%;
+  background-color: rgb(57, 104, 145);
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+/* Table Styling */
+.table {
+  width: 1650px;
+  font-size: 14px;
+  color: #444;
+  border-collapse: collapse;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.table thead {
+  background-color: rgb(76, 164, 49);
+  color: black;
+}
+
+.table th,
+.table td {
+  border: 1px solid rgb(31, 31, 110);
+  padding: 8px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.title h2 {
+  color: blue;
+  font-size: 350%;
+}
+
+/* Centered and Spaced Layouts */
+.DUN {
+  padding-left: 25%;
+  align-items: center;
+}
+
+.SUN {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 20vh;           
+}
+
+/* Fake Input Styling */
+.fake-input { 
+  position: relative;
+  width: 1000px;
+}
+
+.fake-input input { 
+  width: 100%;
+  padding: 50px 75px 50px 50px;  
+  font-size: 50px;
+  border: 5px solid black;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+.fake-input img {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none; 
+}
+
+.fake-input input:focus {
+  border-color: #0d0d0d;
+  box-shadow: 0 0 8px rgba(49, 96, 130, 0.5);
+  background-color: #dff6fa;
+}
+
+/* Button Styling */
+#B {
+  width: 30%;
+  height: 5em;
+  margin: 35%;
+  background-color: rgb(50, 61, 185);
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+#B:hover {
+  background-color: rgb(43, 183, 211);
+}
+
+#login {
+  padding-left: 70%;
+}
+
+#delflaglist {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Radio Button Styling */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 20px; 
+  font-weight: bold;
+}
+
+.radio-option:hover {
+  background-color: #e0e0e0;
+}
+
+input[type="radio"] {
+  width: 30px; 
+  height: 30px;
+  accent-color: #007bff;
+  transform: scale(1.5);
+}
+
+/* Media Queries for Mobile Devices */
+
+/* Mobile (up to 600px) */
+@media only screen and (max-width: 600px) {
+  header {
+      height: 30vh;
+  }
+  
+  header h1 {
+      width: 70%;
+      font-size: 250%;
+      padding: 15px;
+  }
+
+  header h2 {
+      font-size: 150%;
+  }
+
+  .DUN {
+      padding-left: 0;
+  }
+
+  .SUN {
+      height: auto;
+      flex-direction: column;
+  }
+
+  .fake-input {
+      width: 90%;
+  }
+
+  .fake-input input {
+      font-size: 30px;
+      padding: 15px 30px;
+  }
+
+  .fake-input img {
+      width: 40px;
+      height: 40px;
+  }
+
+  #B {
+      width: 80%;
+      margin: 10%;
+      font-size: 18px;
+  }
+
+  #login {
+      padding-left: 20%;
+  }
+
+  .radio-option {
+      font-size: 16px;
+      padding: 10px 15px;
+  }
+
+  input[type="radio"] {
+      width: 25px;
+      height: 25px;
+  }
+
+  #delflaglist {
+      font-size: 20px;
+  }
+}
+
+/* Tablet (600px - 1024px) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  header h1 {
+      width: 50%;
+      font-size: 350%;
+      padding: 20px;
+  }
+
+  header h2 {
+      font-size: 250%;
+  }
+
+  .DUN {
+      padding-left: 10%;
+  }
+
+  .fake-input {
+      width: 80%;
+  }
+
+  .fake-input input {
+      font-size: 40px;
+      padding: 20px 40px;
+  }
+
+  #B {
+      width: 60%;
+      margin: 20%;
+      font-size: 20px;
+  }
+
+  .radio-option {
+      font-size: 18px;
+  }
+
+  input[type="radio"] {
+      width: 28px;
+      height: 28px;
+  }
+}

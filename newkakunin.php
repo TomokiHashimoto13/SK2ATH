@@ -63,13 +63,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./CSS/Newkakunin.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <h3>New Employee</h3>
-  <div class="messagebox">
-    <p><?=$results["message"]?></p>
+<main>
+        <div class="NE">
+        <h1 id="Titel">New Employee</h1>
+        <div class="messagebox">
+          <p><?=$results["message"]?></p>
+          <p>kadkakd</p>
+          <p>kadkakd</p>
+          <p>kadkakd</p>
+          <p>kadkakd</p>
+          <p>kadkakd</p>
+</main>
+
+    
+  </div>
   </div>
 </body>
 </html>
