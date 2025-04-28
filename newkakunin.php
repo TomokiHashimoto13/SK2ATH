@@ -81,18 +81,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         <div class="NE">
-        <h1 id="Titel">New Employee</h1>
-        <div class="messagebox">
-          <p><?=$results["message"]?></p>
-          <p>kadkakd</p>
-          <p>kadkakd</p>
-          <p>kadkakd</p>
-          <p>kadkakd</p>
-          <p>kadkakd</p>
-</main>
-
-    
-  </div>
-  </div>
+          <h1 id="Titel">New Employee</h1>
+          <div class="messagebox">
+            <p><?=$results["message"]?></p>
+          </div>
+        </div>
 </body>
 </html>
