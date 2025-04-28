@@ -38,7 +38,7 @@ try{
   <main>
     <div id="DP">
       <ul>
-      <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER">kokoko</p></li>
+        <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
         <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
         <li><a href="">Setting</a></li>
         <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>

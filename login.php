@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userID = trim($_POST['userID']);
     // echo "id:$userID<br>";//debug
     $password = trim($_POST['password']);
-    echo "pass:$password<br>";//debug
+    // echo "pass:$password<br>";//debug
   try {
     $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
 
@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["userID"] = $userID; //session 
       $_SESSION["userName"] = $user["emp_name"];
       $message= "Welcom!";
-      // header("Location: "); 
-      // exit;
+      header("Location:employee.php"); 
+      exit;
     } else {
       $message = "Invalid username or password!";
     }
@@ -73,10 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <button type="submit" id="B"><h1>LOGIN</h1></button>
         </form>
-        
-          
-    
-
     </main>
 </body>
 </html>
