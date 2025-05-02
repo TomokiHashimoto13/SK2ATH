@@ -68,23 +68,24 @@ try{
           </thead>
           <tbody>
           <?php foreach($result as $views):?>
-        <tr>
-          <td><?=$views["emp_no"]?></td>
-          <td><?=$views["emp_name"]?></td>
-          <td><?=$views["is_admin"]?></td>
-          <td><?=$views["status"]?></td>
-          <td><?=$views["department"]?></td>
-          <td><?=$views["phone_no"]?></td>
-          <td><?=$views["address"]?></td>
-          <td><?=$views["passwords"]?></td>
-          <td><?=$views["del_flag"]?></td>
-          <td><?=$views["updated_by"]?></td>
-          <td><?=$views["updated_at"]?></td>
-          <td class="action-cell">
-            <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
-            <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
-          </td>
-        </tr>
+            <tr onclick="this.classList.toggle('expanded')">
+              <td data-label="社員番号"><?=$views["emp_no"]?></td>
+              <td data-label="氏名"><?=$views["emp_name"]?></td>
+              <td data-label="管理者"><?=$views["is_admin"]?></td>
+              <td data-label="役職"><?=$views["status"]?></td>
+              <td data-label="部署"><?=$views["department"]?></td>
+              <td data-label="電話番号"><?=$views["phone_no"]?></td>
+              <td data-label="住所"><?=$views["address"]?></td>
+              <td data-label="パスワード"><?=$views["passwords"]?></td>
+              <td data-label="削除フラグ"><?=$views["del_flag"]?></td>
+              <td data-label="更新者"><?=$views["updated_by"]?></td>
+              <td data-label="更新日時"><?=$views["updated_at"]?></td>
+              <td class="action-cell" data-label="操作">
+                <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
+                <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
+              </td>
+            </tr>
+        
         <?php endforeach ?>
           </tbody>
         </table>

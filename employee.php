@@ -58,12 +58,12 @@ try{
           </thead>
           <tbody>
             <?php foreach($result as $views):?>
-            <tr>
-              <td><?=$views["emp_no"]?></td>
-              <td><?=$views["emp_name"]?></td>
-              <td><?=$views["is_admin"]?></td>
-              <td><?=$views["status"]?></td>
-              <td><?=$views["department"]?></td>
+            <tr onclick="this.classList.toggle('expanded')">
+              <td data-label="社員番号"><?=$views["emp_no"]?></td>
+              <td data-label="氏名"><?=$views["emp_name"]?></td>
+              <td data-label="管理者"><?=$views["is_admin"]?></td>
+              <td data-label="役職"><?=$views["status"]?></td>
+              <td data-label="部署"><?=$views["department"]?></td>
             </tr>
             <?php endforeach ?>
           </tbody>
