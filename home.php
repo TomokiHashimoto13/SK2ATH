@@ -32,7 +32,7 @@ session_start();
             </div>
             <div class="SUN">
                 <div class="fake-input">
-                  <a href="./empHome.php">
+                  <a href="./safehomeAd.php">
                     <input type="button" value="安否登録">
                   </a>
                 </div>

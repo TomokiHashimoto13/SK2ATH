@@ -33,7 +33,7 @@ try{
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomeList</title>
+  <title>社員安否詳細画面</title>
   <link rel="stylesheet" href="./CSS/homelist.css">
   <link rel="stylesheet" href="./CSS/home.css">
 </head>
@@ -146,6 +146,9 @@ try{
             <div class="status status-gray"></div>
         </div>
           <?php endif ?>
+        </div>
+        <div class="backBtn">
+            <button><a href="./safetyad.php">安否一覧画面</a></button>
         </div>
       <?php endforeach ?>
       </div>

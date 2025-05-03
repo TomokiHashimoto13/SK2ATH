@@ -84,6 +84,13 @@ body{
 .fake-input input:hover{
   background-color: rgb(145, 180, 211);
 }
+.backBtn button{
+  padding:10px;
+  cursor: pointer;
+}
+.backBtn button:hover{
+  background-color: rgb(145, 180, 211);
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   /**/

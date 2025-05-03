@@ -1,6 +1,52 @@
 <?php
 session_start();
 require_once __DIR__ . "/def.php";
+$safety["safety_status"]=filter_input(INPUT_POST,"safety_status");
+echo $safety["safety_status"];
+if($safety["safety_status"] == "1"){
+  $safety["injury"] = "0";
+}else{
+  $safety["injury"] = "1";
+}
+echo $safety["injury"];
+$safety["attendance_flag"]=filter_input(INPUT_POST,"attendance_flag");
+echo $safety["attendance_flag"];
+$results =[
+  "status" => true,
+  "message" => null,
+];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  try {
+    $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
+    $db = new PDO($dsn, DB_USER, DB_PASS);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Lấy ngày giờ hiện tại
+    $now = date("Y-m-d H:i:s");
+    $db->beginTransaction();
+    $sql = "INSERT INTO SAFETY_REPORTS (
+              emp_no,emp_name,safety_status,attendance_flag,injury,reported_at,updated_by,updated_at
+            ) VALUES (
+              :emp_no, :emp_name, :safety_status, :attendance_flag, :injury,:reported_at,:updated_by, :updated_at)";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(":emp_no", $_SESSION["userID"], PDO::PARAM_STR);
+    $stmt->bindParam(":emp_name",$_SESSION["userName"], PDO::PARAM_STR);
+    $stmt->bindValue(":safety_status",($safety["safety_status"] === "1")? 1: 0, PDO::PARAM_BOOL);
+    $stmt->bindValue(":attendance_flag",($safety["attendance_flag"] === "1")? 1: 0, PDO::PARAM_BOOL);
+    $stmt->bindValue(":injury",($safety["injury"] === "1")? 1: 0, PDO::PARAM_BOOL);
+    $stmt->bindParam(":reported_at",$now, PDO::PARAM_STR);
+    $stmt->bindParam(":updated_by", $_SESSION["userID"], PDO::PARAM_STR);
+    $stmt->bindParam(":updated_at", $now);
+
+    $stmt->execute();
+    $db -> commit();
+    $results["message"] = "社員情報を正常に登録しました。";
+  } catch (PDOException $e) {
+    $results["status"] = false;
+    $results["message"] = "登録に失敗しました: " . $e->getMessage();
+  }
+}
 $result = [];
 try{
   $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
@@ -40,7 +86,7 @@ try{
     <div id="DP">
           <ul>
             <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
-            <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+            <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
             <li><a href="">Setting</a></li>
             <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
           </ul>
