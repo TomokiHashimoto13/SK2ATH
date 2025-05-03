@@ -54,10 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt->execute();
     $db -> commit();
-    $results["message"] = "社員情報を正常に登録しました。";
+    $results["message"] = "成功しました。";
   } catch (PDOException $e) {
     $results["status"] = false;
-    $results["message"] = "登録に失敗しました: " . $e->getMessage();
+    $results["message"] = "失敗しました: " . $e->getMessage();
   }
 }
 
@@ -67,14 +67,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./CSS/sign-up.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/kakunin.css">
+  <title>変更確認</title>
 </head>
 <body>
-
-  <h3>Message</h3>
-  <div class="messagebox">
-    <p><?=$results["message"]?></p>
-  </div>
+    <header>
+        <div id="DP">
+          <ul>
+            <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
+            <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+            <li><a href="">Setting</a></li>
+            <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+          </ul>
+        <div>
+    </header>
+    <main>
+      <div class="table-responsive">
+        <div class="kakuninbox">
+          <h2>Message</h2>
+          <div class="messagebox">
+            <p ><?=$results["message"]?></p>
+          </div>
+          <div class="backBtn">
+            <button><a href="./empList.php">社員一覧画面</a></button>
+          </div>
+        </div>
+      </div>
+    </main>
 </body>
 </html>

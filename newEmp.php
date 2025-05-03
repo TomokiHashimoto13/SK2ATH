@@ -7,24 +7,22 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/sign-up.css">
-    <title>sign-up</title>
+    <title>管理者用-社員登録</title>
 </head>
 <body>
 <main>
     <div id="DP">
       <ul>
         <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
-        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+        <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
         <li><a href="">Setting</a></li>
         <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
       </ul>
       <div>
         <div class="title">
-          <h1>TEST.COM</h1>
-          <h2>新規登録</h2>
+          <h2>社員登録</h2>
         </div>
         <form action="./newkakunin.php" method="POST">
-            <h1 class="DUN">新規社員</h1>
             <div class="SUN">
                 <div class="fake-input">
                     <input type="text" name="id" id="id" placeholder="社員番号" required>
@@ -42,12 +40,12 @@ session_start();
                 <h1 id="delflaglist">管理者:</h1>
                 <div class="radio-group">
                   <label class="radio-option" for="yesad">
-                    <input type="radio" name="adminsQ" id="yesad" value="true" required>
+                    <input type="radio" name="adminsQ" id="yesad" value="1" required>
                     <span>はい</span> 
                   </label>
             
                   <label class="radio-option" for="noad">
-                    <input type="radio" name="adminsQ" id="noad" value="false" required>
+                    <input type="radio" name="adminsQ" id="noad" value="0" required>
                     <span>いいえ</span> 
                   </label>
                 </div>
@@ -97,12 +95,12 @@ session_start();
                 <h1 id="delflaglist">削除フラグ:</h1>
                 <div class="radio-group">
                   <label class="radio-option" for="delflag">
-                    <input type="radio" name="delflag" id="delflag" value="true" required>
+                    <input type="radio" name="delflag" id="delflag" value="1" required>
                     <span>はい</span> 
                   </label>
             
                   <label class="radio-option" for="undelflag">
-                    <input type="radio" name="delflag" id="undelflag" value="false" required>
+                    <input type="radio" name="delflag" id="undelflag" value="0" required>
                     <span>いいえ</span> 
                   </label>
                 </div>

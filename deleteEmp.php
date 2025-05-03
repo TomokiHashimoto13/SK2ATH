@@ -34,19 +34,19 @@ try{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/sign-up.css">
-    <title>Delete</title>
+    <title>管理者用-社員削除</title>
 </head>
 <body>
 <main>
     <div id="DP">
       <ul>
         <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
-        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+        <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
         <li><a href="">Setting</a></li>
         <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
       </ul>
         <form action="./deletekakunin.php" method="POST">
-            <h1 class="DUN">削除社員</h1>
+            <h1 class="DUN">管理者用-社員削除</h1>
             <?php foreach($result as $views):?>
             <div class="SUN">
                 <div class="fake-input">
@@ -65,7 +65,6 @@ try{
         <h2>保存する前に正しい情報を入力したことを確認してください。</h2>
       </div> 
             <button type="submit" id="B"><h1>削除</h1></button>
-  
         </form>
       </div>
     </div>  
