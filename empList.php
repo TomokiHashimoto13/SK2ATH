@@ -49,48 +49,46 @@ try{
     <div>
       <button id="B" type="button"><a href="./newEmp.php">新規</a></button>
     </div>
-    <table class="table">
-  <thead>
-    <tr>
-      <th>社員番号</th>
-      <th>氏名</th>
-      <th class="hide-on-mobile">管理者</th>
-      <th class="hide-on-mobile">役職</th>
-      <th class="hide-on-mobile">部署</th>
-      <th class="hide-on-mobile">電話番号</th>
-      <th class="hide-on-mobile">住所</th>
-      <th class="hide-on-mobile">パスワード</th>
-      <th class="hide-on-mobile">削除フラグ</th>
-      <th class="hide-on-mobile">更新者</th>
-      <th class="hide-on-mobile">更新日時</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach($result as $views): ?>
-      <tr class="employee-row">
-        <td class="emp_no"><?=$views["emp_no"]?></td>
-        <td class="emp_name">
-          <a href="javascript:void(0);" class="toggle-details" data-emp-id="<?=$views["emp_no"]?>"><?=$views["emp_name"]?></a>
-        </td>
-        <!-- Hidden details columns -->
-        <td class="hide-on-mobile details"><?=$views["is_admin"]?></td>
-        <td class="hide-on-mobile details"><?=$views["status"]?></td>
-        <td class="hide-on-mobile details"><?=$views["department"]?></td>
-        <td class="hide-on-mobile details"><?=$views["phone_no"]?></td>
-        <td class="hide-on-mobile details"><?=$views["address"]?></td>
-        <td class="hide-on-mobile details"><?=$views["passwords"]?></td>
-        <td class="hide-on-mobile details"><?=$views["del_flag"]?></td>
-        <td class="hide-on-mobile details"><?=$views["updated_by"]?></td>
-        <td class="hide-on-mobile details"><?=$views["updated_at"]?></td>
-        <td class="action-cell">
-          <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
-          <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
-        </td>
-      </tr>
-    <?php endforeach ?>
-  </tbody>
-</table>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>社員番号</th>
+              <th>氏名</th>
+              <th>管理者</th>
+              <th>役職</th>
+              <th>部署</th>
+              <th>電話番号</th>
+              <th>住所</th>
+              <th>パスワード</th>
+              <th>削除フラグ</th>
+              <th>更新者</th>
+              <th>更新日時</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach($result as $views):?>
+            <tr onclick="this.classList.toggle('expanded')">
+              <td data-label="社員番号"><?=$views["emp_no"]?></td>
+              <td data-label="氏名"><?=$views["emp_name"]?></td>
+              <td data-label="管理者"><?=$views["is_admin"]?></td>
+              <td data-label="役職"><?=$views["status"]?></td>
+              <td data-label="部署"><?=$views["department"]?></td>
+              <td data-label="電話番号"><?=$views["phone_no"]?></td>
+              <td data-label="住所"><?=$views["address"]?></td>
+              <td data-label="パスワード"><?=$views["passwords"]?></td>
+              <td data-label="削除フラグ"><?=$views["del_flag"]?></td>
+              <td data-label="更新者"><?=$views["updated_by"]?></td>
+              <td data-label="更新日時"><?=$views["updated_at"]?></td>
+              <td class="action-cell" data-label="操作">
+                <button class="edit-btn" title="edit"><a href="./editEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-pen"></i></a></button>
+                <button class="delete-btn" title="delete"><a href="./deleteEmp.php?id=<?=$views["emp_no"]?>"><i class="fas fa-trash-alt"></i></a></button>
+              </td>
+            </tr>
+        
+        <?php endforeach ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>

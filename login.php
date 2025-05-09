@@ -22,12 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $user = $stmt->fetch(PDO::FETCH_ASSOC); //database
     // echo "{$user["emp_name"]}";//debug
-    if($password = $user["passwords"]){
+    if($password == $user["passwords"]){
       $_SESSION["userID"] = $userID; //session 
       $_SESSION["userName"] = $user["emp_name"];
       $message= "Welcom!";
-      header("Location:employee.php"); 
-      exit;
+      if($user["is_admin"]){
+        header("Location:home.php"); 
+        exit;
+      }else{
+        header("Location:empHome.php"); 
+        exit;
+      }
+      
     } else {
       $message = "Invalid username or password!";
     }

@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#L img {
+    margin: 0;
+    padding: 0;
+  }
+
+  #USER {
+     text-decoration: none; 
+    margin: 0;
+    padding: 0;
+  }
+#T{
+    font-size: 300%;
+}
+
+#bar ul {
+    border: 1px solid black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(217, 214, 214);
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+}
+
+#bar li {
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    text-align: left;
+}
+
+#bar li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#bar li a:hover {
+    background-color: azure;
+    color: brown;
+}
+
+#bar li img {
+    margin-right: 10px;
+}
+.table-responsive {
+    margin-left: 220px; /* untuk sidebar */
+    max-width: 100%;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* tengah horizontal */
+    margin-top: 50px;
+    gap: 30px;
+    position: relative;
+}
+
+/* Elemen admin (kotak abu) */
+#T {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 100px;
+    background-color: rgb(171, 170, 170);
+    width: 400px;
+    height: 150px;
+    gap: 20px;
+}
+
+/* Lingkaran status */
+.status-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: green;
+    transition: background-color 0.5s ease;
+}
+
+#B {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(240, 240, 240);
+    background-color: rgb(198, 194, 194);
+    border-radius: 30px;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+}
+
+#B ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+#B li {
+    list-style-type: none;
+    width: 80%; /* Ubah ini untuk mengatur lebar item */
+}
+
+.hbar {
+    border: 1px solid rgb(30, 121, 155);
+    border-radius: 30px;
+    background-color: white;
+    width: 100%; /* biar ikut lebar li */
+    height: 60px;
+    text-align: center;
+    margin: 10px 0;
+}
+.hbar a{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+
+    #bar ul {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    #bar li {
+        font-size: 20px;
+        border-bottom: none;
+        border-right: 1px solid black;
+        text-align: center;
+    }
+
+    #bar li a {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .table-responsive {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .admin-container {
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    #T {
+        font-size: 20px;
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .status-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    #B {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #B ul {
+        width: 100%;
+    }
+
+    #B li {
+        width: 100%;
+    }
+
+    .hbar {
+        height: 50px;
+        font-size: 16px;
+    }
+}
