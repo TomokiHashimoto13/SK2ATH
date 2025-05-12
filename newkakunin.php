@@ -39,13 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt = $db->prepare($sql);
     $stmt->bindParam(":emp_no", $employee["id"], PDO::PARAM_STR);
     $stmt->bindParam(":emp_name", $employee["username"], PDO::PARAM_STR);
-    $stmt->bindValue(":is_admin", $employee["adminsQ"], PDO::PARAM_BOOL);
+    $stmt->bindValue(":is_admin", ($employee["adminsQ"] === "1")? 1: 0, PDO::PARAM_BOOL);
     $stmt->bindParam(":status", $employee["status"], PDO::PARAM_STR);
     $stmt->bindParam(":department", $employee["department"], PDO::PARAM_STR);
     $stmt->bindParam(":phone_no", $employee["phone-no"], PDO::PARAM_STR);
     $stmt->bindParam(":address", $employee["address"], PDO::PARAM_STR);
     $stmt->bindParam(":passwords", $employee["password"], PDO::PARAM_STR);
-    $stmt->bindValue(":del_flag", $employee["delflag"], PDO::PARAM_BOOL);
+    $stmt->bindValue(":del_flag", ($employee["delflag"] === "1")? 1: 0, PDO::PARAM_BOOL);
     $stmt->bindParam(":updated_by", $_SESSION["userID"], PDO::PARAM_STR);
     $stmt->bindParam(":updated_at", $now);
 
@@ -63,28 +63,61 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./CSS/Newkakunin.css">
+  <link rel="stylesheet" href="./CSS/kakunin.css">
+      <link rel="stylesheet" href="./CSS/home.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>登録確認</title>
 </head>
 <body>
-<ul>
-        <li><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER">kokoko</p>  </li>
+     <header>
+  <div id="DP">
+    <!-- Hamburger Menu Button (Only visible on mobile) -->
+    <button class="menu-toggle">☰ Menu</button>
 
-        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
-        <li><a href="">Setting</a></li>
-        <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
-        <li><a href="./newEmp.php"><img src="./images/back.jpg" width="50" alt=""></a></li>
-      </ul>
-     
-<main>
-
-
-        <div class="NE">
-          <h1 id="Titel">New Employee</h1>
+    <!-- Sidebar -->
+    <ul id="sidebar">
+      <li id="L">
+        <img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile">
+        <p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p>
+      </li>
+      <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+      <li><a href="">Setting</a></li>
+      <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+    </ul>
+  </div>
+</header>
+    <main>
+      <div class="table-responsive">
+        <div class="kakuninbox">
+          <h2>Message</h2>
           <div class="messagebox">
             <p><?=$results["message"]?></p>
           </div>
+          <div class="backBtn">
+            <button><a href="./empList.php">社員一覧画面</a></button>
+          </div>
         </div>
+      </div>
+    </main>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+
+    
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation(); 
+      sidebar.classList.toggle("active");
+    });
+
+    
+    document.addEventListener("click", function (event) {
+     
+      if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>

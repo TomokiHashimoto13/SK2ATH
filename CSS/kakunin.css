@@ -1,0 +1,71 @@
+/* Image Styles */
+#L img {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #USER {
+    text-decoration: none; 
+    margin: 0;
+    padding: 0;
+  }
+  /* Sidebar Styles */
+  ul {
+    border: 1px solid black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(217, 214, 214);
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+  }
+  
+  li {
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    text-align: left;
+  }
+  
+  li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  li a:hover {
+    background-color: azure;
+    color: brown;
+  }
+  
+  li img {
+    margin-right: 10px;
+  }
+  body{
+    background-color: rgb(57, 104, 145);
+  }
+  /* Content Area (beside sidebar) */
+  .table-responsive {
+    margin-left: 220px; /* space for sidebar */
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .kakuninbox{
+    background-color: #ffffff;
+    padding:10px;
+  }
+  .backBtn button{
+    padding:10px;
+    cursor: pointer;
+  }
+  .backBtn button:hover{
+    background-color: rgb(145, 180, 211);
+  }
+  a{
+    text-decoration: none;
+  }

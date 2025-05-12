@@ -31,21 +31,29 @@ try{
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./CSS/employee.css">
-  <title>EMPLOYEE</title>
+   <link rel="stylesheet" href="./CSS/home.css">
+  <title>社員用-社員一覧画面</title>
 </head>
 <body>
+<header>
+  <div id="DP">
+    <!-- Hamburger Menu Button (Only visible on mobile) -->
+    <button class="menu-toggle">☰ Menu</button>
 
+    <!-- Sidebar -->
+    <ul id="sidebar">
+      <li id="L">
+        <img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile">
+        <p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p>
+      </li>
+      <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+    </ul>
+  </div>
+</header>
   <main>
-    <div id="DP">
-      <ul>
-        <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
-        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
-        <li><a href="">Setting</a></li>
-        <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
-      </ul>
 
       <div class="table-responsive">
-        <h3 id="T">EMPLOYEE LIST</h3>
+        <h3 id="T">社員用-社員一覧画面</h3>
         <table class="table">
           <thead>
             <tr>
@@ -69,12 +77,29 @@ try{
           </tbody>
         </table>
       </div>
-    </div>
+  
   </main>
 
-  <footer>
-   
-  </footer>
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+
+    
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation(); 
+      sidebar.classList.toggle("active");
+    });
+
+    
+    document.addEventListener("click", function (event) {
+     
+      if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

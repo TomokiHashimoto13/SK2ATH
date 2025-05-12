@@ -1,0 +1,180 @@
+ul {
+    border: 1px solid black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(217, 214, 214);
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+}
+li {
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    text-align: left;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover {
+    background-color: azure;
+    color: brown;
+}
+
+li img {
+    margin-right: 10px;
+}
+
+
+*{
+    background-color: #cccccc;
+ }
+ 
+ img{
+     background-color: #cccccc;
+     max-width:4em;
+     
+ }
+ 
+ dialog#headerModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   margin: 0;
+   padding: 0;
+   border: none;
+   width: 250px;
+   height: 100vh;
+   background-color:#cccccc#d6d6d6;
+   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+ }
+ 
+ #mainHeader {
+   padding: 1rem;
+ }
+ 
+ #mainHeader nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 2rem 0 0 0;
+ }
+ 
+ #mainHeader nav ul li {
+   margin: 1rem 0;
+ }
+ 
+ #mainHeader nav ul li a {
+   text-decoration: none;
+   font-size: 1.2rem;
+   color: #333;
+ }
+ 
+ #closeHeader {
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #333;
+ }
+ 
+ 
+ 
+   main {
+     flex: 1;
+    
+   }
+ 
+   p{
+     margin: 10px 0;
+     font-size: 45px;
+     color: #000000;
+     padding: 20px 0;
+     display: flex;
+     flex-direction: column;       /* 縦並び */
+     justify-content: center;
+     align-items: center;      /* 縦方向の中央 */
+      /* 横方向の中央 */
+     font-family: sans-serif;
+     background-color: #cccccc;    /* 背景色はお好みで */
+   }
+ 
+   #USER {
+    text-decoration: none; 
+    margin: 0;
+    padding: 0;
+  }
+ 
+   
+ 
+   
+ 
+   
+   
+   .center-box {
+     text-align: center;
+   }
+   
+   label, select {
+     font-size: 2rem;
+   }
+   
+   select {
+     padding: 0.9rem 2rem;
+     width: 20em; /* ← 横長にする指定（お好みで調整可） */
+     border-color: black;
+     background-color: #007aff;
+     font-size: 2.5em;
+        margin-top: 100px;
+        text-align: center;
+      text-align-last: center;
+        
+    
+   }
+
+   
+   div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;       /* 縦並び */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+   }
+ 
+   
+
+
+   
+   .ss{
+    width: 4em;
+    height: 2em;
+     font-size: 2.5em;
+     margin-left: 25em;
+     margin-top: 7em;
+     background-color: #007aff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 2cm;
+     border: orangered;
+     
+    
+   }
+ 
+   
+
+ 
+  
+ 
+   
+ 
+ 
+   

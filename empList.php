@@ -32,23 +32,36 @@ try{
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./CSS/employee1.css">
-  <title>EMPLOYEE for ADMIN</title>
+  <link rel="stylesheet" href="./CSS/home.css">
+  <title>管理者用-社員一覧画面</title>
 </head>
 <body>
-<main>
-    <div id="DP">
-      <ul>
-        <li id="L"><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
-        <li><a href="">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
-        <li><a href="">Setting</a></li>
-        <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
-      </ul>
 
+
+<header>
+  <div id="DP">
+    <!-- Hamburger Menu Button (Only visible on mobile) -->
+    <button class="menu-toggle">☰ Menu</button>
+
+    <!-- Sidebar -->
+    <ul id="sidebar">
+      <li id="L">
+        <img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile">
+        <p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p>
+      </li>
+      <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+      <li><a href="">Setting</a></li>
+      <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+    </ul>
+  </div>
+</header>
+<main>
+  
       <div class="table-responsive">
-      <h3 id="T" >EMPLOYEE LIST FOR ADMIN</h3>
-    <div>
+      <h3 id="T" >管理者用-社員一覧画面</h3>
+
       <button id="B" type="button"><a href="./newEmp.php">新規</a></button>
-    </div>
+   
         <table class="table">
           <thead>
             <tr>
@@ -92,6 +105,26 @@ try{
       </div>
     </div>
   </main>
+   <script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
 
+    
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation(); 
+      sidebar.classList.toggle("active");
+    });
+
+    
+    document.addEventListener("click", function (event) {
+     
+      if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
+</script>
 </body>
 </html>

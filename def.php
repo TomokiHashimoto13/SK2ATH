@@ -9,8 +9,8 @@ define( "ASSET_URL", WEB_ROOT . "/asset" );
 // DB
 //
 define( "DB_HOST", "localhost" );
-define( "DB_USER", "dbuser" );
-define( "DB_PASS", "ecc");
+define( "DB_USER", "admin" );
+define( "DB_PASS", "admin");
 define( "DB_NAME", "TestCompany" );
 define( "DB_CHARSET", "utf8mb4" );
 

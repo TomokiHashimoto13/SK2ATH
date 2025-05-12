@@ -12,10 +12,12 @@ session_start();
 <body>
     <ul>
         <li><img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile"><p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p></li>
+        <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+        <li><a href="">Setting</a></li>
         <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
     </ul>
     <p>安否情報登録</p>
-    <form action="./safeEmp.php" method="POST">
+    <form action="./safetyad.php" method="POST">
       <div class="div">
           <div class="div1">
               <label for="card"></label>

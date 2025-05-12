@@ -22,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $stmt->execute();
     $db -> commit();
-    $results["message"] = "社員情報を正常に登録しました。";
+    $results["message"] = "成功しました。";
   } catch (PDOException $e) {
     $results["status"] = false;
-    $results["message"] = "登録に失敗しました: " . $e->getMessage();
+    $results["message"] = "失敗しました: " . $e->getMessage();
   }
 }
 
@@ -35,12 +35,60 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/home.css">
+  <link rel="stylesheet" href="./CSS/kakunin.css">
+  <title>削除確認</title>
 </head>
 <body>
-  <h3>Message</h3>
-  <div class="messagebox">
-    <p><?=$results["message"]?></p>
+   <header>
+  <div id="DP">
+    <!-- Hamburger Menu Button (Only visible on mobile) -->
+    <button class="menu-toggle">☰ Menu</button>
+
+    <!-- Sidebar -->
+    <ul id="sidebar">
+      <li id="L">
+        <img src="./images/profile-circle-svgrepo-com.svg" width="200" alt="Profile">
+        <p id="USER"><?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?></p>
+      </li>
+      <li><a href="./home.php">HOME <img src="./images/home.jpg" width="50" alt="Home"></a></li>
+      <li><a href="">Setting</a></li>
+      <li><a href="./logout.php">Logout <img src="./images/logout.svg" width="50" alt="Logout"></a></li>
+    </ul>
   </div>
+</header>
+    <main>
+      <div class="table-responsive">
+        <div class="kakuninbox">
+          <h2>Message</h2>
+          <div class="messagebox">
+            <p><?=$results["message"]?></p>
+          </div>
+          <div class="backBtn">
+            <button><a href="./empList.php">社員一覧画面</a></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+
+    
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation(); 
+      sidebar.classList.toggle("active");
+    });
+
+    
+    document.addEventListener("click", function (event) {
+     
+      if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>

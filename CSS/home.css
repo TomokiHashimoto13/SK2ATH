@@ -1,0 +1,304 @@
+/* Image Styles */
+#L img {
+  margin: 0;
+  padding: 0;
+}
+
+#USER {
+  text-decoration: none; 
+  margin: 0;
+  padding: 0;
+}
+/* Sidebar Styles */
+ul {
+  border: 1px solid black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: rgb(217, 214, 214);
+  height: 100vh;
+  position: fixed;
+  overflow: auto;
+}
+
+li {
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  text-align: left;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover {
+  background-color: azure;
+  color: brown;
+}
+
+li img {
+  margin-right: 10px;
+}
+
+/* Content Area (beside sidebar) */
+.table-responsive {
+  margin-left: 220px; /* space for sidebar */
+  max-width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+}
+.bodybar{
+  margin-top: 5%;
+}
+body{
+  background-color: rgb(57, 104, 145);
+}
+.SUN {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 20vh;
+}
+
+.fake-input {
+  position: relative;
+  width: 1000px;
+}
+
+.fake-input input {
+  width: 100%;
+  padding: 50px 75px 50px 50px; 
+  font-size: 50px;
+  border: 5px solid black;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.fake-input input:hover{
+  background-color: rgb(145, 180, 211);
+}
+.backBtn button{
+  padding:10px;
+  cursor: pointer;
+}
+.backBtn button:hover{
+  background-color: rgb(145, 180, 211);
+}
+
+/* Style untuk tombol menu (hamburger) */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+ 
+  top: 10px;
+  left: 10px;
+  z-index: 1000;  /* Pastikan tombol selalu di atas elemen lain */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Menampilkan tombol menu hanya di mobile */
+  .menu-toggle {
+    display: block; /* Show the hamburger menu button */
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  
+  ul#sidebar {
+    display: none; 
+    flex-direction: column;
+    background-color: rgb(217, 214, 214);
+    width: 250px; 
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    height: 100vh; 
+    z-index: 999; 
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+  }
+
+  
+  ul#sidebar.active {
+    left: 0; 
+    display: flex;
+  }
+
+  
+  .table-responsive {
+    transition: margin-left 0.3s ease;
+    margin-left: 0; 
+  }
+
+  
+  ul#sidebar.active ~ .table-responsive {
+    margin-left: 250px; 
+  }
+
+ 
+  ul#sidebar li {
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+
+  ul {
+    width: 100%;
+    height: auto;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 10px 0;
+    background-color: #eee;
+  }
+
+  li {
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    padding: 8px 0;
+  }
+
+  li a {
+    justify-content: center;
+    padding: 10px;
+  }
+
+
+  li a:hover {
+    background-color: azure;
+    color: brown;
+  }
+
+  
+  .table-responsive {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .table {
+    min-width: 900px;
+    font-size: 12px;
+  }
+
+ 
+  #T {
+    font-size: 150%;
+    text-align: center;
+  }
+
+  #B {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #B a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .table thead {
+    display: none; 
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .table td {
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 40%;
+    color: #555;
+  }
+
+
+  .table tr:not(.expanded) td:not(:nth-child(1)):not(:nth-child(2)) {
+    display: none;
+  }
+
+  
+  .table tr.expanded {
+    background-color: #f7f7f7;
+  }
+
+  .table tr td:last-child {
+    border-bottom: none;
+  }
+
+ 
+  #SU {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .SUN {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+ 
+  .fake-input {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .fake-input input {
+    font-size: 24px;
+    padding: 15px 20px;
+  }
+
+  
+  #B {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 18px;
+  }
+}

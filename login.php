@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $db = new PDO($dsn, DB_USER, DB_PASS);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT emp_name,passwords FROM employee WHERE emp_no = :userID";
+    $sql = "SELECT emp_name,passwords,is_admin FROM employee WHERE emp_no = :userID";
     $stmt = $db->prepare($sql);
 
     $stmt->bindParam(":userID", $userID, PDO::PARAM_STR);
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["userID"] = $userID; //session 
       $_SESSION["userName"] = $user["emp_name"];
       $message= "Welcom!";
-      if($user["is_admin"]){
+      if($user["is_admin"] === 1){
         header("Location:home.php"); 
         exit;
       }else{
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/login.css">
-    <title>Login</title>
+    <title>ログイン画面</title>
 </head>
 <body>
     <header>
